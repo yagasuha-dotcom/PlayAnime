@@ -15,13 +15,13 @@ import * as cheerio from "cheerio";
 
 const CANDIDATE_DOMAINS = [
   process.env.SAMEHADAKU_BASE_URL, // override manual kalau ada, prioritas tertinggi
-  "https://samehadaku.care",
+  "https://samehadaku.li",
   "https://v2.samehadaku.how",
   "https://samehadaku.how",
-  "https://samehadaku.li",
   "https://samehadaku.now",
   "https://samehadaku.day",
   "https://samehadaku.vip",
+  "https://samehadaku.care", // catatan: per Jul 2026 ini cuma halaman redirect kosong
 ].filter(Boolean) as string[];
 
 const UA =
