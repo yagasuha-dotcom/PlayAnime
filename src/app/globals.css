@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: #08090c;
+  color: #e5e7eb;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Kotak/table ala rfloys: border tegas, sudut agak tajam, isian mono buat angka/label */
+.box {
+  @apply bg-base-800 border border-line rounded-box;
+}
+
+.box-label {
+  @apply text-[11px] uppercase tracking-widest text-gray-500 font-mono;
+}
+
+.stat-tile {
+  @apply box p-4 flex flex-col gap-1;
+}
+
+.stat-value {
+  @apply text-xl font-bold font-mono text-gray-100;
+}
+
+.btn-primary {
+  @apply bg-accent text-black font-semibold rounded-box px-4 py-3 text-center active:scale-[0.98] transition;
+}
+
+.btn-outline {
+  @apply border border-line text-gray-200 rounded-box px-4 py-3 text-center active:scale-[0.98] transition;
+}
+
+.kasta-badge {
+  @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-mono font-bold uppercase tracking-wide;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom range slider buat video player */
+input[type="range"] {
+  -webkit-appearance: none;
+  background: transparent;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  background: #242938;
+  border-radius: 4px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin-top: -5px;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: #f6a623;
+}
