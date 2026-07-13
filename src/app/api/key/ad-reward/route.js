@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { supabaseServer } from "@/lib/supabase";
+import { supabaseServer } from "@/lib/supabase-server";
 import { grantKeyFromAd } from "@/lib/access";
 
 // Endpoint ini dipanggil dari callback SSV (Server-Side Verification) provider iklan

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getEpisode } from "@/lib/samehadaku";
-import { supabaseServer } from "@/lib/supabase";
+import { supabaseServer } from "@/lib/supabase-server";
 import { db, schema } from "@/lib/db";
 import { eq } from "drizzle-orm";
 import {

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { supabaseServer } from "@/lib/supabase";
+import { supabaseServer } from "@/lib/supabase-server";
 import { unlockEpisodeWithKey } from "@/lib/access";
 
 export async function POST(req) {

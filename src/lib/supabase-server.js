@@ -1,12 +1,5 @@
-import { createBrowserClient, createServerClient } from "@supabase/ssr";
+import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
-
-export function supabaseBrowser() {
-  return createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  );
-}
 
 export function supabaseServer() {
   const cookieStore = cookies();
@@ -21,9 +14,7 @@ export function supabaseServer() {
         set(name, value, options) {
           try {
             cookieStore.set({ name, value, ...options });
-          } catch (e) {
-            // ignore di server component read-only context
-          }
+          } catch (e) {}
         },
         remove(name, options) {
           try {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { supabaseServer } from "@/lib/supabase";
+import { supabaseServer } from "@/lib/supabase-server";
 import { db, schema } from "@/lib/db";
 import { eq, desc } from "drizzle-orm";
 
