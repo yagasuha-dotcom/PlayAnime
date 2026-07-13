@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
 :root {
   color-scheme: dark;
@@ -10,38 +10,57 @@
 
 html,
 body {
-  background: #08090c;
-  color: #e5e7eb;
+  background: #07070c;
+  color: #e7e7f0;
   font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Kotak/table ala rfloys: border tegas, sudut agak tajam, isian mono buat angka/label */
-.box {
-  @apply bg-base-800 border border-line rounded-box;
+h1, h2, h3, .font-display {
+  font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
 }
 
-.box-label {
-  @apply text-[11px] uppercase tracking-widest text-gray-500 font-mono;
+/* Signature: kartu dengan border-glow ungu-magenta, bukan kotak abu polos */
+.card {
+  @apply bg-ink-800 border border-line rounded-box relative overflow-hidden;
+}
+
+.card-glow {
+  @apply card shadow-glow-sm transition-shadow duration-300;
+}
+.card-glow:active {
+  @apply shadow-glow;
+}
+
+.eyebrow {
+  @apply text-[10px] uppercase tracking-[0.18em] text-violet font-mono font-semibold;
 }
 
 .stat-tile {
-  @apply box p-4 flex flex-col gap-1;
+  @apply card p-4 flex flex-col gap-1;
 }
 
 .stat-value {
-  @apply text-xl font-bold font-mono text-gray-100;
+  @apply text-xl font-bold font-display text-white;
 }
 
 .btn-primary {
-  @apply bg-accent text-black font-semibold rounded-box px-4 py-3 text-center active:scale-[0.98] transition;
+  @apply bg-brand-gradient text-white font-semibold rounded-box px-4 py-3 text-center active:scale-[0.97] transition shadow-glow;
 }
 
 .btn-outline {
-  @apply border border-line text-gray-200 rounded-box px-4 py-3 text-center active:scale-[0.98] transition;
+  @apply border border-line text-gray-200 rounded-box px-4 py-3 text-center active:scale-[0.97] transition;
 }
 
-.kasta-badge {
-  @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-mono font-bold uppercase tracking-wide;
+.kasta-tag {
+  @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-wider;
+}
+
+.brand-wordmark {
+  @apply font-display font-bold tracking-tight;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .scrollbar-none::-webkit-scrollbar {
@@ -52,14 +71,18 @@ body {
   scrollbar-width: none;
 }
 
-/* Custom range slider buat video player */
+/* halo ambient di belakang hero/header, bukan flat solid */
+.ambient-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.18), transparent 65%);
+}
+
 input[type="range"] {
   -webkit-appearance: none;
   background: transparent;
 }
 input[type="range"]::-webkit-slider-runnable-track {
   height: 4px;
-  background: #242938;
+  background: #22223a;
   border-radius: 4px;
 }
 input[type="range"]::-webkit-slider-thumb {
@@ -68,5 +91,6 @@ input[type="range"]::-webkit-slider-thumb {
   height: 14px;
   width: 14px;
   border-radius: 50%;
-  background: #f6a623;
+  background: #a855f7;
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.8);
 }

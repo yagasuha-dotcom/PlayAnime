@@ -7,32 +7,46 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        base: {
-          950: "#08090c",
-          900: "#0c0e13",
-          800: "#12151c",
-          700: "#1a1e28",
-          600: "#242938",
+        ink: {
+          950: "#07070c",
+          900: "#0b0b13",
+          800: "#12121d",
+          700: "#1b1b2a",
+          600: "#282840",
         },
-        line: "#232838",
-        accent: {
-          DEFAULT: "#f6a623", // amber/orange terminal-style, sama semangat kotak rfloys
-          soft: "#3a2f1a",
+        line: "#22223a",
+        violet: {
+          DEFAULT: "#a855f7",
+          soft: "#2a1a45",
         },
-        mint: "#39d98a", // status "tersedia" / sukses
-        ruby: "#ef4444", // status locked/error
+        magenta: "#ec4899",
+        amber: {
+          DEFAULT: "#fbbf24",
+          soft: "#3a2a10",
+        },
+        mint: "#34d399",
+        ruby: "#f43f5e",
         kasta: {
-          admin: "#f6a623",
-          donatur: "#7c9dff",
+          admin: "#fbbf24",
+          donatur: "#a855f7",
           rakyat: "#6b7280",
         },
       },
       fontFamily: {
-        mono: ["'JetBrains Mono'", "ui-monospace", "SFMono-Regular", "monospace"],
+        display: ["'Space Grotesk'", "ui-sans-serif", "system-ui"],
         sans: ["'Inter'", "ui-sans-serif", "system-ui"],
+        mono: ["'JetBrains Mono'", "ui-monospace", "monospace"],
+      },
+      backgroundImage: {
+        "brand-gradient": "linear-gradient(135deg, #a855f7 0%, #ec4899 100%)",
+        "glow-radial": "radial-gradient(circle at 50% 0%, rgba(168,85,247,0.15), transparent 70%)",
       },
       borderRadius: {
-        box: "10px",
+        box: "14px",
+      },
+      boxShadow: {
+        glow: "0 0 0 1px rgba(168,85,247,0.25), 0 8px 24px -8px rgba(168,85,247,0.35)",
+        "glow-sm": "0 0 0 1px rgba(168,85,247,0.2)",
       },
     },
   },
